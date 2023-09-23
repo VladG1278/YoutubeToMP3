@@ -53,4 +53,4 @@ for links in linkList:
     os.rename(out_file, new_file)
 
     # result of success
-    print(yt.title + " has been successfully downloaded.")
+    print("\"" + yt.title + "\"" + " has been successfully downloaded.")
