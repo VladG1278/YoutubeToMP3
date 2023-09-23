@@ -10,8 +10,13 @@ driver = webdriver.Chrome(options=options)
 # Link to playlist
 PlaylistLink = "https://www.youtube.com/playlist?list=PL6dVz1zQldGT4OLCZPK3MHE5u1qidHENS"
 driver.get(PlaylistLink)
+
+# Finds all href information in html (links)
 elem = driver.find_elements(By.XPATH, "//*[@href]")
 linkList = []
+
+
+# Filters the links for videos and duplicates and adds links to linkList
 num = 0
 for links in elem:
     temp = links.get_attribute("href")
@@ -24,4 +29,3 @@ for links in elem:
         if num == 0:
             linkList.append(temp)
         num = 0
-print(len(linkList))
