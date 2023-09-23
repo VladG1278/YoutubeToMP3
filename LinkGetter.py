@@ -10,7 +10,7 @@ options.add_argument('--headless=new')
 driver = webdriver.Chrome(options=options)
 
 # Link to playlist
-PlaylistLink = "https://www.youtube.com/playlist?list=PL6dVz1zQldGT4OLCZPK3MHE5u1qidHENS"
+PlaylistLink = input("YouTube playlist to convert: ")
 driver.get(PlaylistLink)
 
 # Finds all href information in html (links)
@@ -33,11 +33,11 @@ for links in elem:
 
 # make a new folder in downloads
 # change this to your download folder path
-path = "C:\\Users\\monke\\Downloads"
+path = "C:\\Users\\monke\\Downloads\\Mp3 Music"
 directoryName = input("Enter the name of the playlist: ")
 destination = os.path.join(path, directoryName)
 
-# downloads links
+# downloads links (from: https://www.geeksforgeeks.org/download-video-in-mp3-format-using-pytube/#)
 for links in linkList:
     yt = YouTube(links)
 
